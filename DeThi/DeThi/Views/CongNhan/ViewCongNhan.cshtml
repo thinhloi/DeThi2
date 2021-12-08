@@ -1,0 +1,10 @@
+﻿@{
+  ViewData["Title"] = "Thông tin công nhân";
+}
+@model CongNhanModels
+
+<label>Mã công nhân</label><input value="@Model.MaCongNhan" readonly />
+<label>Tên công nhân</label><input value="@Model.TenCongNhan" readonly />
+<label>Giới tính</label>@Html.CheckBoxFor(model => model.GioiTinh, new { @disabled = true });
+<label>Năm sinh</label><input value="@Model.NamSinh" readonly />
+<label>Nước về</label><input value="@Model.NuocVe" readonly />

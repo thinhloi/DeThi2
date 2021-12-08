@@ -1,0 +1,31 @@
+﻿@model List<CongNhanModels>
+<table border="1">
+    <tr>
+    <th>Mã công nhân</th>
+    <th>Tên công nhân</th>
+    <th>Chức năng</th>
+  </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td name="MaCongNhan">@item.MaCongNhan</td>
+                <td name="TenCongNhan">@item.TenCongNhan</td>
+                <td>
+                    @Html.ActionLink(
+                            "Delete",
+                            "Delete",
+                            "CongNhan",
+                            new{macongnhan = @item.MaCongNhan,
+                                tencongnhan = @item.TenCongNhan,
+                            })
+                    @Html.ActionLink(
+                            "View",
+                            "ViewDetail",
+                            "CongNhan",
+                            new{macongnhan = @item.MaCongNhan,
+                                tencongnhan = @item.TenCongNhan,
+                            })
+                </td>
+            </tr>
+        }
+</table>

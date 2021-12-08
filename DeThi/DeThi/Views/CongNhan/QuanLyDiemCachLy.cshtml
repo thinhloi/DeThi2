@@ -1,0 +1,15 @@
+﻿@model List<DeThi.Models.DiemCachLyModels>
+
+@{
+  ViewData["Title"] = "Tên điểm cách ly";
+}
+<form action="/CongNhan/ListSelectedOfCongNhan" method="post">
+    <label>Tên điểm cách ly</label>
+    <select name="MaDiemCachLy" id="TenDiemCachLy">
+        @foreach (var item in Model)
+        {
+            <option value="@item.MaDiemCachLy">@item.TenDiemCachLy </option>
+        }
+    </select><br>
+    <input type="submit" value="Liệt Kê" name="submit" id="Lietke" />
+</form>
